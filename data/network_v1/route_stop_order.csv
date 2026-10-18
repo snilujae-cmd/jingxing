@@ -1,0 +1,10 @@
+﻿route_id,direction_record,stop_sequence,station_id,station_name,boarding_status,source_id,verification_status,notes
+A,published_order,1,N01,地铁钟灵街站,待核实,SRC-001;SRC-002,已核实站序,是否允许只下不上/只上不下未披露。
+A,published_order,2,N02,体育公园,待核实,SRC-001;SRC-002,已核实站序,
+A,published_order,3,N03,灵谷景区,待核实,SRC-001;SRC-002,已核实站序,
+A,published_order,4,N04,流徽榭,待核实,SRC-001;SRC-002,已核实站序,
+A,published_order,5,N05,孙中山纪念馆,待核实,SRC-001;SRC-002,已核实站序,官方括注音乐台。
+B,published_order,1,N06,紫金·钟爱里,待核实,SRC-001;SRC-002,已核实站序,
+B,published_order,2,N03,灵谷景区,待核实,SRC-001;SRC-002,已核实站序,
+B,published_order,3,N04,流徽榭,待核实,SRC-001;SRC-002,已核实站序,
+B,published_order,4,N05,孙中山纪念馆,待核实,SRC-001;SRC-002,已核实站序,官方括注音乐台。
