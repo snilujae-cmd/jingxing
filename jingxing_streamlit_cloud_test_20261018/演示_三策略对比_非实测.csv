@@ -1,0 +1,4 @@
+﻿strategy,fleet_A,fleet_B,vehicle_capacity,seed,demand_signature,arrivals,boarded,remaining_queue,service_rate,wait_observed_person_min,wait_observed_avg_min,p95_boarded_wait_min,departures
+fixed,10,6,36,42,58014a5b0599126e,1396,1380,16,0.98854,13198.471,9.454,17.498,60
+dynamic,10,6,36,42,58014a5b0599126e,1396,1367,29,0.97923,12590.871,9.019,22.421,73
+optimized,10,6,36,42,58014a5b0599126e,1396,1372,24,0.98281,7263.931,5.203,11.408,94

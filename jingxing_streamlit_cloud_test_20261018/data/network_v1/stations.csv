@@ -1,0 +1,7 @@
+﻿station_id,station_name,official_name,station_type,research_route_ids,longitude,latitude,source_id,evidence_level,verification_status,usable_for_model,notes
+N01,地铁钟灵街站,地铁钟灵街站,地铁接驳入口,A,,,SRC-001;SRC-002,A2,已核实站名及线路归属,TRUE,坐标未采集；不要用景区示意图像素位置代替GPS。
+N02,体育公园,体育公园,景区站点,A,,,SRC-001;SRC-002,A2,已核实站名及站序,TRUE,官方另见钟山体育运动公园表述；本线路表使用体育公园。
+N03,灵谷景区,灵谷景区,景区站点/换乘,A;B,,,SRC-001;SRC-002,A2,已核实站名及站序,TRUE,A/B共享站。
+N04,流徽榭,流徽榭（紫金山探险公园）,景区站点/换乘,A;B,,,SRC-001;SRC-002,A2,已核实站名及站序,TRUE,A/B共享站。
+N05,孙中山纪念馆,孙中山纪念馆（音乐台）,景区站点/端点,A;B,,,SRC-001;SRC-002,A2,已核实站名及站序,TRUE,官方将音乐台并列标注；具体上下客点GPS待核实。
+N06,紫金·钟爱里,紫金·钟爱里,外围游客集散中心,B,,,SRC-001;SRC-002,A2,已核实站名及线路归属,TRUE,停车容量与临时运力另见证据表；不得等同B线常态运力。
