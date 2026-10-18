@@ -86,5 +86,18 @@ def assert_admin() -> None:
 def require_admin_page() -> None:
     """Deny a separately opened Admin view before it renders or runs actions."""
     if not is_admin():
-        st.error("此页面仅管理员可访问。请先在网站入口登录。")
+        st.title("🔐 Admin 管理员登录")
+        if not admin_configured():
+            st.error("管理员账号尚未配置；管理端已关闭。请由部署者配置凭据。")
+            st.stop()
+        st.info("此页面仅管理员可访问。登录后将继续打开当前页面。")
+        with st.form("admin_page_login", clear_on_submit=True):
+            username = st.text_input("账号")
+            password = st.text_input("密码", type="password")
+            submitted = st.form_submit_button("登录")
+        if submitted:
+            if login_admin(username, password):
+                st.rerun()
+            else:
+                st.error("账号或密码错误。")
         st.stop()

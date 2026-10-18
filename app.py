@@ -37,17 +37,17 @@ def admin_account_page() -> None:
 
 
 user_page = st.Page("views/user.py", title="游客出行与仿真回放", icon="📍", default=True)
+admin_visibility = "visible" if is_admin() else "hidden"
 pages = {"User 游客端": [user_page]}
-if is_admin():
-    pages["Admin 管理端"] = [
-        st.Page("views/0_Admin_Home.py", title="入口说明", icon="🏠"),
-        st.Page("views/1_Admin_Dashboard.py", title="调度控制台", icon="🎛️"),
-        st.Page("views/2_Admin_Vehicle_Route.py", title="车辆与线路", icon="🚌"),
-        st.Page("views/3_Admin_Demand_Scenario.py", title="客流场景", icon="👥"),
-        st.Page("views/4_Admin_Smart_Dispatch.py", title="智能调度", icon="🧠"),
-        st.Page("views/5_Admin_Simulation_Monitor.py", title="仿真监测", icon="📡"),
-        st.Page("views/6_Admin_Experiment_Analysis.py", title="实验分析", icon="📊"),
-    ]
+pages["Admin 管理端"] = [
+    st.Page("views/0_Admin_Home.py", title="入口说明", icon="🏠", visibility=admin_visibility),
+    st.Page("views/1_Admin_Dashboard.py", title="调度控制台", icon="🎛️", visibility=admin_visibility),
+    st.Page("views/2_Admin_Vehicle_Route.py", title="车辆与线路", icon="🚌", visibility=admin_visibility),
+    st.Page("views/3_Admin_Demand_Scenario.py", title="客流场景", icon="👥", visibility=admin_visibility),
+    st.Page("views/4_Admin_Smart_Dispatch.py", title="智能调度", icon="🧠", visibility=admin_visibility),
+    st.Page("views/5_Admin_Simulation_Monitor.py", title="仿真监测", icon="📡", visibility=admin_visibility),
+    st.Page("views/6_Admin_Experiment_Analysis.py", title="实验分析", icon="📊", visibility=admin_visibility),
+]
 pages["管理员账号"] = [st.Page(admin_account_page, title="管理员登录 / 退出", icon="🔐", url_path="admin-login")]
 
 current_page = st.navigation(pages, position="top")

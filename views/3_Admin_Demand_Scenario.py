@@ -3,27 +3,16 @@ import numpy as np
 import plotly.graph_objects as go
 from admin_auth import require_admin_page
 from core.demand import demand_multiplier, outbound_fraction
+from scenario_state import (default_scenario, load_scenario, save_scenario,
+                            simulation_scenario_params)
 
 require_admin_page()
 
 st.title("👥 Admin端 · 客流场景设置")
 st.caption("基准到达率指A+B两线合计每小时待乘车游客数（非每站、非景区总游客数）；均为仿真假设")
 
-# ============ 初始化状态 ============
-if "scenario" not in st.session_state:
-    st.session_state.scenario = {
-        "type": "平峰",
-        "arrival_rate": 120,
-        "duration_min": 600,
-        "seed": 42,
-        "tidal": False,          # 是否启用潮汐
-        "disruption": False,     # 是否启用突发
-        "disruption_type": "客流突增",
-        "disruption_center": 300,# 突发中心时刻（分钟）
-        "disruption_sigma": 30,  # 突发持续宽度（分钟）
-        "disruption_intensity": 2.0,  # 突发强度倍数
-    }
-sc = st.session_state.scenario
+# 编辑副本；所有控件更新完毕后再一次性保存有效场景。
+sc = load_scenario(st.session_state) or default_scenario()
 
 # ============ 场景基础参数 ============
 with st.container(border=True):
@@ -75,6 +64,8 @@ with st.container(border=True):
                 intensity_label, 1.0, 5.0, intensity_now, 0.1)
 
 sc["seed"] = st.number_input("随机种子", 0, 9999, sc["seed"])
+sc["disruption_center"] = min(sc["disruption_center"], sc["duration_min"])
+sc = save_scenario(st.session_state, sc)
 
 
 # ================================================================
@@ -83,19 +74,11 @@ sc["seed"] = st.number_input("随机种子", 0, 9999, sc["seed"])
 def generate_curve(sc):
     """与core/simulation.py一致的15分钟期望客流曲线；真实生成还会泊松抽样。"""
     t = np.arange(0, sc["duration_min"], 15)
-    params = {
-        "duration_min": sc["duration_min"], "scenario_type": sc["type"],
-        "peak_multiplier": 2.0, "tidal": sc["tidal"],
-        "disruption": sc["disruption"],
-        "disruption_type": sc["disruption_type"],
-        "disruption_center": sc["disruption_center"],
-        "disruption_sigma": sc["disruption_sigma"],
-        "disruption_intensity": sc["disruption_intensity"],
-    }
+    params = simulation_scenario_params(sc)
     y_up, y_down = [], []
     for minute in t:
         moment = minute + 7.5
-        expected_total = sc["arrival_rate"] / 4 * demand_multiplier(moment, params)
+        expected_total = params["arrival_rate"] / 4 * demand_multiplier(moment, params)
         outbound = outbound_fraction(moment, params)
         y_up.append(expected_total * outbound)
         y_down.append(expected_total * (1 - outbound))

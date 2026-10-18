@@ -37,7 +37,8 @@ with st.expander("🗂️ 仿真数据来源 / 切换运行结果", expanded=Tru
     has_shared_run = shared_run_path().is_file()
     choices = ["最新共享仿真", "内置演示样例", "上传Admin导出的ZIP"]
     mode = st.radio("选择数据来源", choices,
-                    index=(0 if has_shared_run or in_same_session else 1), horizontal=True)
+                    index=(0 if has_shared_run or in_same_session else 1),
+                    horizontal=True, key="user_data_source")
     st.caption("共享仿真来自本网站Admin最近一次成功写入的完整结果。其他浏览器或设备打开同一服务器后，"
                "选择此项并刷新页面即可读取；多服务器部署需要配置共同的存储。")
     run = None

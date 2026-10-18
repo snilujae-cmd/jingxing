@@ -128,6 +128,43 @@ class AdminAuthenticationTests(unittest.TestCase):
                 admin_auth.require_admin_page()
         error.assert_called_once()
 
+    def test_direct_admin_page_prompts_for_login_and_stops_before_content(self):
+        class PageStopped(Exception):
+            pass
+
+        os.environ["JINGXING_ADMIN_USERNAME"] = "operator"
+        os.environ["JINGXING_ADMIN_PASSWORD"] = "test-password"
+        with patch.object(admin_auth.st, "title"), \
+                patch.object(admin_auth.st, "info") as info, \
+                patch.object(admin_auth.st, "form") as form, \
+                patch.object(admin_auth.st, "text_input", return_value=""), \
+                patch.object(admin_auth.st, "form_submit_button", return_value=False), \
+                patch.object(admin_auth.st, "stop", side_effect=PageStopped):
+            with self.assertRaises(PageStopped):
+                admin_auth.require_admin_page()
+        form.assert_called_once_with("admin_page_login", clear_on_submit=True)
+        info.assert_called_once()
+        self.assertFalse(admin_auth.is_admin())
+
+    def test_direct_admin_page_login_continues_on_same_page(self):
+        class PageRerun(Exception):
+            pass
+
+        os.environ["JINGXING_ADMIN_USERNAME"] = "operator"
+        os.environ["JINGXING_ADMIN_PASSWORD"] = "test-password"
+        with patch.object(admin_auth.st, "title"), \
+                patch.object(admin_auth.st, "info"), \
+                patch.object(admin_auth.st, "form"), \
+                patch.object(admin_auth.st, "text_input", side_effect=["operator", "test-password"]), \
+                patch.object(admin_auth.st, "form_submit_button", return_value=True), \
+                patch.object(admin_auth.st, "rerun", side_effect=PageRerun), \
+                patch.object(admin_auth.st, "stop") as stop:
+            with self.assertRaises(PageRerun):
+                admin_auth.require_admin_page()
+        stop.assert_not_called()
+        self.assertTrue(admin_auth.is_admin())
+        admin_auth.require_admin_page()
+
 
 class PageBoundaryTests(unittest.TestCase):
     def _navigation_for(self, authorized):
@@ -141,11 +178,12 @@ class PageBoundaryTests(unittest.TestCase):
         current_page.run.assert_called_once()
         return navigation.call_args.args[0]
 
-    def test_guest_navigation_defaults_to_user_and_hides_admin_views(self):
+    def test_guest_navigation_registers_hidden_admin_views(self):
         pages = self._navigation_for(False)
         self.assertEqual([page[0] for page in pages["User 游客端"]], ["views/user.py"])
         self.assertTrue(pages["User 游客端"][0][1]["default"])
-        self.assertNotIn("Admin 管理端", pages)
+        self.assertEqual(len(pages["Admin 管理端"]), 7)
+        self.assertTrue(all(page[1]["visibility"] == "hidden" for page in pages["Admin 管理端"]))
         self.assertIn("管理员账号", pages)
 
     def test_authenticated_navigation_registers_all_admin_views(self):
@@ -155,6 +193,7 @@ class PageBoundaryTests(unittest.TestCase):
             {page[0] for page in pages["Admin 管理端"]},
             {f"views/{path.name}" for path in ADMIN_VIEWS},
         )
+        self.assertTrue(all(page[1]["visibility"] == "visible" for page in pages["Admin 管理端"]))
         self.assertTrue(pages["User 游客端"][0][1]["default"])
 
     def test_every_admin_view_calls_guard_before_rendering_or_running(self):

@@ -7,6 +7,7 @@ from admin_auth import assert_admin, require_admin_page
 from core.simulation import run_simulation
 from core.exporter import zip_content
 from data.vehicles import DEFAULT_FLEET
+from scenario_state import load_scenario, simulation_scenario_params
 from shared_run_store import publish_result
 
 require_admin_page()
@@ -17,10 +18,7 @@ st.warning("本项目仅为情景仿真：车队规模、双向原路折返、�
 
 if "fleet" not in st.session_state:
     st.session_state.fleet = dict(DEFAULT_FLEET)
-sc = st.session_state.get("scenario", {
-    "type": "平峰", "arrival_rate": 120, "duration_min": 600, "seed": 42,
-    "tidal": False, "disruption": False,
-})
+sc = load_scenario(st.session_state)
 
 with st.container(border=True):
     st.subheader("① 车队配置")
@@ -56,38 +54,40 @@ with st.container(border=True):
         with c3:
             beam = st.slider("束搜索宽度", 2, 15, 4)
 
-params = {
-    "duration_min": int(sc["duration_min"]),
-    "arrival_rate": float(sc["arrival_rate"]),
-    "fleet": dict(st.session_state.fleet),
-    "vehicle_capacities": {rid: [capacity] * n for rid, n in st.session_state.fleet.items()},
-    "speed_kmh": speed,
-    "fixed_interval": fixed_interval,
-    "queue_threshold": queue_threshold,
-    "scenario_type": sc.get("type", "平峰"),
-    "peak_multiplier": 2.0,
-    "tidal": sc.get("tidal", False),
-    "disruption": sc.get("disruption", False),
-    "disruption_type": sc.get("disruption_type", "客流突增"),
-    "disruption_center": sc.get("disruption_center", 300),
-    "disruption_sigma": sc.get("disruption_sigma", 30),
-    "disruption_intensity": sc.get("disruption_intensity", 2.0),
-    "decision_interval_min": step,
-    "prediction_horizon_min": horizon,
-    "beam_width": beam,
-    "snapshot_interval_min": 5,
-}
-seed = int(sc["seed"])
+params = None
+seed = None
+if sc is not None:
+    params = {
+        **simulation_scenario_params(sc),
+        "fleet": dict(st.session_state.fleet),
+        "vehicle_capacities": {rid: [capacity] * n for rid, n in st.session_state.fleet.items()},
+        "speed_kmh": speed,
+        "fixed_interval": fixed_interval,
+        "queue_threshold": queue_threshold,
+        "decision_interval_min": step,
+        "prediction_horizon_min": horizon,
+        "beam_width": beam,
+        "snapshot_interval_min": 5,
+    }
+    seed = sc["seed"]
+    st.success(f"已读取客流场景：{sc['type']}，基准到达率 {sc['arrival_rate']} 人/小时，"
+               f"仿真时长 {sc['duration_min']} 分钟。")
+else:
+    st.warning("尚未保存有效客流场景。请先进入「客流场景」页面设置参数。")
 
 left, right = st.columns(2)
 with left:
-    run_one = st.button("▶️ 运行所选策略", type="primary", use_container_width=True)
+    run_one = st.button("▶️ 运行所选策略", type="primary", use_container_width=True,
+                        disabled=sc is None)
 with right:
-    run_compare = st.button("📊 同场景比较三策略", use_container_width=True)
+    run_compare = st.button("📊 同场景比较三策略", use_container_width=True,
+                            disabled=sc is None)
 
 if run_one or run_compare:
     try:
         assert_admin()
+        if params is None or seed is None:
+            raise ValueError("请先保存有效客流场景")
         with st.spinner("仿真计算中……"):
             if run_one:
                 result = run_simulation(params, strategy=strategy, seed=seed)
@@ -151,4 +151,5 @@ if "last_result" in st.session_state:
     st.caption("ZIP包含 od_flow.csv、station_state.csv、vehicle_state.csv、passenger_results.csv；"
                "全部来自当前同一次仿真。请在接入既有User端前核对表头，不会覆盖昨天的样例文件。")
 else:
-    st.info("请先设置客流场景，再运行仿真。")
+    if sc is not None:
+        st.info("客流场景已就绪；尚未运行仿真。")
