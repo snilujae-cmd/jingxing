@@ -1,6 +1,0 @@
-﻿edge_id,from_station_id,to_station_id,served_by_route_ids,distance_km,travel_time_min,return_edge_required,return_road_path_verified,source_category,verification_status,notes
-E01,N01,N02,A,,,TRUE,FALSE,官方站序+项目建模边,待实测/地图道路核验,公开线路只证明相邻站序，不证明实际行驶道路、距离和时间。
-E02,N02,N03,A,,,TRUE,FALSE,官方站序+项目建模边,待实测/地图道路核验,
-E03,N03,N04,A;B,,,TRUE,FALSE,官方站序+项目建模边,待实测/地图道路核验,两线共享逻辑边；物理道路是否完全相同待核验。
-E04,N04,N05,A;B,,,TRUE,FALSE,官方站序+项目建模边,待实测/地图道路核验,
-E05,N06,N03,B,,,TRUE,FALSE,官方站序+项目建模边,待实测/地图道路核验,2026国庆报道的10分钟试乘终点为博爱坊，不可填入本边。

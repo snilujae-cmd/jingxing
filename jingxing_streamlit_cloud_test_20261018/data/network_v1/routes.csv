@@ -1,3 +1,0 @@
-﻿route_id,route_name,route_category,origin_station_id,destination_station_id,published_stop_sequence,outbound_first_departure,outbound_last_departure,opposite_terminal_first_departure,opposite_terminal_last_departure,season_scope,return_service_indicated,return_stop_order_verified,distance_verified,segment_time_verified,source_id,evidence_level,verification_status,model_use_note
-A,钟灵街地铁接驳线,地铁接驳线,N01,N05,N01>N02>N03>N04>N05,06:15,17:30,07:00,19:00,2月—11月；12月—次年1月端点时间分别调整为06:45-17:00及07:30-18:00,TRUE,FALSE,FALSE,FALSE,SRC-001;SRC-002,A2,站序和端点首末班已核实；回程道路未核实,可导入拓扑和运营窗口；不得生成实际距离/分段时长。
-B,紫金·钟爱里外接驳线,外接驳线,N06,N05,N06>N03>N04>N05,08:30,16:30,08:30,18:00,官方完整线路表未注明季节调整,TRUE,FALSE,FALSE,FALSE,SRC-001;SRC-002,A2,站序和端点首末班已核实；回程道路未核实,可导入拓扑和运营窗口；不得把钟爱里临时大巴全部配置给本线。
