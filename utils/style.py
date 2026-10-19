@@ -69,7 +69,13 @@ def load_css():
     }
     </style>
     """, unsafe_allow_html=True)
+import streamlit as st
 
+
+def page_header(title: str, subtitle: str = ""):
+    st.title(title)
+    if subtitle:
+        st.caption(subtitle)
 
 def page_header(title, subtitle, eyebrow=None):
     """Render a consistent page heading; all dynamic text is escaped."""
