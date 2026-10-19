@@ -40,7 +40,7 @@ with hero_text:
     st.write("把线路看清楚，让游览更从容。查找研究线路与站点，回看接驳车仿真，了解不同调度策略下的候车情况。")
     st.caption("线路查询 · 仿真回放 · 趋势分析与已发布策略比较")
 with hero_photo:
-    render_image("liuhuixie", caption="流徽榭 · 图片由用户提供，来源与使用授权待确认")
+    render_image("liuhuixie", caption="流徽榭 · 图片来源：钟山风景区")
 st.info("科研情景仿真：车辆、排队、候车与策略比较均来自模拟结果，不代表景区真实实时运营数据或官方调度信息。")
 
 published_comparison = None
@@ -158,7 +158,7 @@ with tab1:
 
     with st.container(border=True):
         st.subheader("景区观光车线路总览")
-        render_image("routes", caption="图片来源：钟山风景区官方/公开资料 · 保留完整图例与文字；仅供研究参考")
+        render_image("routes", caption="图片来源：钟山风景区/公开资料 · 保留完整图例与文字；仅供研究参考")
         original_map = asset_download("routes")
         if original_map is not None:
             st.download_button("下载线路原图，放大查看", data=original_map,
@@ -239,7 +239,7 @@ with tab1:
         st.caption("美龄宫、紫金山天文台不在本系统 A/B 研究站序内；以下照片仅供认识景区，不构成直达线路推荐。")
         for column, key, title in zip(st.columns(2), ("meiling", "observatory"), ("美龄宫", "紫金山天文台")):
             with column, st.container(border=True):
-                render_image(key, caption=f"{title} · 图片由用户提供，来源与使用授权待确认")
+                render_image(key, caption=f"{title} · 图片来源：钟山风景区")
                 st.markdown(f"**{title}**")
                 st.caption("其他游览参考 · 不在当前 A/B 可查询站序内")
 
