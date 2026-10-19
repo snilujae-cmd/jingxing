@@ -223,7 +223,7 @@ with tab1:
                 st.info("当前范围内没有支持该OD的直达线路；换乘功能待开发。")
 
     st.subheader("沿线景点")
-    st.caption("照片用于认识沿线景点，查询站点保持现有 A/B 模型范围。图片由用户提供，来源与授权待确认。")
+    st.caption("照片用于认识沿线景点，查询站点保持现有 A/B 模型范围。图片来源钟山风景区。")
     for column, key, title, note in zip(
         st.columns(4),
         ("sports", "linggu", "liuhuixie", "memorial"),
