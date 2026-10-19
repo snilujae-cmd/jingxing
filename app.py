@@ -1,7 +1,7 @@
 """景行智调 · 单网站双入口（Admin / User）统一启动文件。"""
 import streamlit as st
 from admin_auth import admin_configured, is_admin, login_admin, logout_admin
-from utils.style import load_css
+from utils.style import load_css, page_header
 
 st.set_page_config(
     page_title="景行智调 · 景区接驳车仿真",
@@ -62,7 +62,4 @@ pages["管理员账号"] = [st.Page(admin_account_page, title="管理员登录 /
 current_page = st.navigation(pages, position="top")
 current_page.run()
 
-def page_header(title, subtitle="", eyebrow=None):
-    st.title(title)
-    if subtitle:
-        st.caption(subtitle)
+
