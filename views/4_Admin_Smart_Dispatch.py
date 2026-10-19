@@ -4,15 +4,17 @@ import streamlit as st
 import pandas as pd
 
 from admin_auth import assert_admin, require_admin_page
+from comparison_data import STRATEGY_LABELS, build_comparison
 from core.simulation import run_simulation
 from core.exporter import zip_content
 from data.vehicles import DEFAULT_FLEET
 from scenario_state import load_scenario, simulation_scenario_params
 from shared_run_store import publish_result
+from utils.style import page_header
 
 require_admin_page()
 
-st.title("🧠 Admin端 · 智能调度控制")
+page_header("智能调度控制", "在同一场景和车队下运行策略，检查结果并向游客发布科研仿真数据。", "ADMIN · DISPATCH")
 st.caption("固定间隔 / 排队阈值 / 滚动预测优化：三策略均真实调用同一离散事件引擎")
 st.warning("本项目仅为情景仿真：车队规模、双向原路折返、逐站客流均属假设，不代表景区运营事实。")
 
@@ -75,6 +77,8 @@ if sc is not None:
 else:
     st.warning("尚未保存有效客流场景。请先进入「客流场景」页面设置参数。")
 
+st.caption("运行完成后自动发布所选策略的四份CSV；选择「同场景比较三策略」还会发布同组比较指标和排队曲线。"
+           "再次运行单次策略将替换共享数据，并移除上一组比较，避免不同运行混用。")
 left, right = st.columns(2)
 with left:
     run_one = st.button("▶️ 运行所选策略", type="primary", use_container_width=True,
@@ -105,9 +109,10 @@ if run_one or run_compare:
                 st.session_state["result"] = selected
             st.session_state["last_run_time"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             try:
-                publish_result(st.session_state["last_result"])
+                publish_result(st.session_state["last_result"],
+                               comparison_results=st.session_state.get("comparison") if run_compare else None)
                 st.session_state.pop("shared_publish_error", None)
-            except OSError as exc:
+            except (OSError, ValueError) as exc:
                 st.session_state["shared_publish_error"] = str(exc)
     except (ValueError, RuntimeError) as e:
         st.error(f"仿真失败，未更新历史结果：{e}")
@@ -132,9 +137,15 @@ if "last_result" in st.session_state:
             f"{r['avg_observed_wait_all']:.1f} 分钟（未上车者仅计至仿真结束）。")
     if "comparison" in st.session_state:
         st.subheader("同一客流/同一车队：三策略对比")
+        comparison = build_comparison(st.session_state["comparison"], r)
+        st.caption(f"比较编号：{comparison['comparison_id']} · 随机种子：{comparison['seed']} · "
+                   f"客流签名：{comparison['demand_signature']}")
+        if not st.session_state.get("shared_publish_error"):
+            st.success("本会话上次已成功发布本组三策略比较。游客读取服务器最新成功发布的结果；"
+                       "其他管理员后续运行可能覆盖共享包，请以游客刷新后的比较编号为准。")
         rows = []
         for item in st.session_state["comparison"]:
-            rows.append({"策略": item["strategy"], "总到达": item["total_arrivals"],
+            rows.append({"策略": STRATEGY_LABELS[item["strategy"]], "运行编号": item["run_id"], "总到达": item["total_arrivals"],
                          "已上车": item["served"], "未上车": item["unserved"],
                          "上车服务率(%)": round(item["service_rate"] * 100, 1),
                          "全体观测候车均值(min)": round(item["avg_observed_wait_all"], 2),

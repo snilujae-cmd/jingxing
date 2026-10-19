@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "14ab968ae5abd87be0f6057fd7283c7fdd6f025d6d5064a02743f290d7bbf3d0",
+  "notes": "用户提供的素材不代表团队原创或已取得官方授权。",
+  "assets": [
+    {
+      "source_file": "092e1661ab72d8157ca0d3816864cb28.jpg",
+      "source_sha256": "2d3f92aced040f8df623c1b241848195ab2016dc0bebca022fe2eb36f3ae43eb",
+      "source_size_bytes": 131838,
+      "source_dimensions": [
+        1050,
+        696
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": false,
+      "reason": "具体地点未确认，暂不用于具名景点"
+    },
+    {
+      "source_file": "孙中山纪念馆.jpg",
+      "source_sha256": "b140c91dfcb4cb7840c1d6fd8bfada1124105486f95e4542093aea16a284f5dd",
+      "source_size_bytes": 465575,
+      "source_dimensions": [
+        1280,
+        832
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "memorial",
+      "path": "assets/user/scenery/sun_yat_sen_memorial.webp",
+      "purpose": "研究线路景点卡",
+      "transform": "离线WebP压缩，最长边960px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 124150,
+      "sha256": "9410beb6e1f985fd5fbfc22f6eda22e952a5c26e53c096a16e08831f6a38dd68"
+    },
+    {
+      "source_file": "流徽榭.jpg",
+      "source_sha256": "6b3e95f4ade0eb99224a85c7993bbe6b7944c0b462745ae0d8120fdf2be0fc10",
+      "source_size_bytes": 197412,
+      "source_dimensions": [
+        1280,
+        785
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "liuhuixie",
+      "path": "assets/user/scenery/liuhuixie.webp",
+      "purpose": "首页主视觉、研究线路景点卡",
+      "transform": "离线WebP压缩，最长边1280px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 158168,
+      "sha256": "4d72583f627a3cff50021e2d0390b6e0e89602abd5916b70af83afb277613297"
+    },
+    {
+      "source_file": "灵谷寺.jpg",
+      "source_sha256": "017a76514ee3453901f773be8fc734c3958f8af2cc6754ae31b1cd6aa5680324",
+      "source_size_bytes": 241957,
+      "source_dimensions": [
+        1280,
+        854
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "linggu",
+      "path": "assets/user/scenery/linggu.webp",
+      "purpose": "灵谷景区内景点卡",
+      "transform": "离线WebP压缩，最长边960px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 147282,
+      "sha256": "5f1e13be056e3270b137465eed1724d6a4be36b29b05e0d5e6c69734f6e9c7ad"
+    },
+    {
+      "source_file": "紫金山天文台.jpg",
+      "source_sha256": "63786989668b94b6a47a72fdac79b80eaf57553ccfc2503e427dd0e4ed360b8e",
+      "source_size_bytes": 166107,
+      "source_dimensions": [
+        963,
+        636
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "observatory",
+      "path": "assets/user/scenery/observatory.webp",
+      "purpose": "研究线路以外的游览参考",
+      "transform": "离线WebP压缩，最长边960px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 138622,
+      "sha256": "a635ba38b96c9ed61394810ff946fd4948d2a3b9b1af403d419344edca418c87"
+    },
+    {
+      "source_file": "美龄宫.jpg",
+      "source_sha256": "15e3d6a70940ef0adc90becfa0caeb44ea6520e82203677fdecc73086a71be81",
+      "source_size_bytes": 239389,
+      "source_dimensions": [
+        1280,
+        850
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "meiling",
+      "path": "assets/user/scenery/meiling_palace.webp",
+      "purpose": "研究线路以外的游览参考",
+      "transform": "离线WebP压缩，最长边960px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 141050,
+      "sha256": "10727c6d7c5dd6c78a6d8767e84445581c17cc8062f7a52db1e14a1593baa678"
+    },
+    {
+      "source_file": "观光车简图.jpg",
+      "source_sha256": "3e7f9e83439d3220345027d57dedb4fe2ac1067478b0cf730aee61f3e64b3583",
+      "source_size_bytes": 188760,
+      "source_dimensions": [
+        1179,
+        2556
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": false,
+      "reason": "旋转手机截图带遮挡，等待清晰原图"
+    },
+    {
+      "source_file": "观光车线路图.jpg",
+      "source_sha256": "fe16108e0abc4be131591d9b07767a2c2a9716bffcb679f863ac7b25f52da61f",
+      "source_size_bytes": 413979,
+      "source_dimensions": [
+        1448,
+        1024
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "routes",
+      "path": "assets/user/maps/sightseeing_routes.jpg",
+      "purpose": "完整线路总览原图",
+      "transform": "原文件逐字节复制；不裁切、不压缩",
+      "size_bytes": 413979,
+      "sha256": "fe16108e0abc4be131591d9b07767a2c2a9716bffcb679f863ac7b25f52da61f"
+    },
+    {
+      "source_file": "钟山体育公园.jpg",
+      "source_sha256": "d20c8e5fc8b8b68db275c652d0b53e8aded415570daed1572967eaa083cf7f40",
+      "source_size_bytes": 105342,
+      "source_dimensions": [
+        1280,
+        849
+      ],
+      "source": "用户提供：景区照片.zip",
+      "license_status": "来源与再发布授权待确认",
+      "used": true,
+      "key": "sports",
+      "path": "assets/user/scenery/sports_park.webp",
+      "purpose": "研究线路景点卡",
+      "transform": "离线WebP压缩，最长边960px；不裁切、不移除水印、不拉伸",
+      "size_bytes": 54108,
+      "sha256": "0d97a8f43ac43d164edc97034d2232384ae8932d16f922a699277110639fb6b4"
+    }
+  ]
+}

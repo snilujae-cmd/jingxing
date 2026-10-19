@@ -4,10 +4,11 @@ from admin_auth import require_admin_page
 from data.stations import STATIONS
 from data.routes import ROUTES
 from data.segments import SEGMENTS
+from utils.style import page_header
 
 require_admin_page()
 
-st.title("🚌 Admin端 · 车辆与线路管理")
+page_header("车辆与线路", "核对 A/B 研究线路、站点顺序及路段参数。公开线路信息与模型估算分别标明。", "ADMIN · NETWORK")
 
 tab1, tab2, tab3 = st.tabs(["📍 站点", "🛤️ 线路", "📏 分段数据"])
 
@@ -24,8 +25,10 @@ with tab2:
         with st.container(border=True):
             st.subheader(f"{rid} 线 · {r['name']}")
             st.write(f"**站序**：{' → '.join(r['stations'])}")
-            st.write(f"**总长度**：{r['total_length_km']} km")
-            st.write(f"**首末班**：{r['first_departure']} – {r['last_departure']}")
+            distance, service = st.columns(2)
+            distance.metric("研究线路长度", f"{r['total_length_km']} km")
+            service.metric("参考首末班", f"{r['first_departure']} – {r['last_departure']}")
+            st.caption("线路用于本项目科研情景仿真；实际运营请以景区当日公告为准。")
 
 with tab3:
     with st.container(border=True):

@@ -5,11 +5,13 @@ from admin_auth import require_admin_page
 from core.demand import demand_multiplier, outbound_fraction
 from scenario_state import (default_scenario, load_scenario, save_scenario,
                             simulation_scenario_params)
+from utils.style import apply_plotly_theme, page_header, section_header
 
 require_admin_page()
 
-st.title("👥 Admin端 · 客流场景设置")
-st.caption("基准到达率指A+B两线合计每小时待乘车游客数（非每站、非景区总游客数）；均为仿真假设")
+page_header("客流场景", "设置同一组研究参数，用于单次仿真与三策略公平比较。参数自动保存到当前会话。", "ADMIN · SCENARIO")
+st.info("基准到达率指 A+B 两线合计每小时待乘车游客数（非每站、非景区总游客数）；所有客流均为仿真假设。")
+section_header("场景参数", "先设置基础客流，再按需要启用潮汐与突发情况。")
 
 # 编辑副本；所有控件更新完毕后再一次性保存有效场景。
 sc = load_scenario(st.session_state) or default_scenario()
@@ -104,7 +106,7 @@ with st.container(border=True):
     fig.add_trace(go.Scatter(
         x=t, y=y_down, mode="lines+markers",
         name="下行（下山 / 出景区）",
-        line=dict(color="#F6BD16", width=3),
+        line=dict(color="#C6A15A", width=3),
         marker=dict(size=5),
     ))
 
@@ -117,7 +119,7 @@ with st.container(border=True):
         paper_bgcolor="rgba(0,0,0,0)",
         legend=dict(orientation="h", yanchor="bottom", y=1.02),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(apply_plotly_theme(fig), use_container_width=True)
 
     # 峰值信息
     c1, c2, c3, c4 = st.columns(4)

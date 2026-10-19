@@ -1,0 +1,1397 @@
+test_admin_page_guard_stops_guest (test_admin_access_control.AdminAuthenticationTests.test_admin_page_guard_stops_guest) ... 2026-10-19 01:54:31.086 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:31.206 WARNING streamlit: 
+  Warning: to view this Streamlit app on a browser, run it with the following
+  command:
+
+    streamlit run python.exe -m unittest [ARGUMENTS]
+2026-10-19 01:54:31.206 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:31.206 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_authenticated_publish_writes_shared_result (test_admin_access_control.AdminAuthenticationTests.test_authenticated_publish_writes_shared_result) ... ok
+test_complete_secrets_take_precedence_over_environment (test_admin_access_control.AdminAuthenticationTests.test_complete_secrets_take_precedence_over_environment) ... ok
+test_direct_admin_page_login_continues_on_same_page (test_admin_access_control.AdminAuthenticationTests.test_direct_admin_page_login_continues_on_same_page) ... ok
+test_direct_admin_page_prompts_for_login_and_stops_before_content (test_admin_access_control.AdminAuthenticationTests.test_direct_admin_page_prompts_for_login_and_stops_before_content) ... ok
+test_environment_credentials_and_wrong_login (test_admin_access_control.AdminAuthenticationTests.test_environment_credentials_and_wrong_login) ... ok
+test_missing_credentials_fail_closed (test_admin_access_control.AdminAuthenticationTests.test_missing_credentials_fail_closed) ... ok
+test_other_session_does_not_inherit_login (test_admin_access_control.AdminAuthenticationTests.test_other_session_does_not_inherit_login) ... ok
+test_partial_or_blank_secrets_do_not_fall_back_to_environment (test_admin_access_control.AdminAuthenticationTests.test_partial_or_blank_secrets_do_not_fall_back_to_environment) ... ok
+test_password_rotation_and_logout_revoke_access (test_admin_access_control.AdminAuthenticationTests.test_password_rotation_and_logout_revoke_access) ... ok
+test_unauthorized_publish_fails_before_creating_parent_or_exporting (test_admin_access_control.AdminAuthenticationTests.test_unauthorized_publish_fails_before_creating_parent_or_exporting) ... ok
+test_authenticated_navigation_registers_all_admin_views (test_admin_access_control.PageBoundaryTests.test_authenticated_navigation_registers_all_admin_views) ... ok
+test_every_admin_view_calls_guard_before_rendering_or_running (test_admin_access_control.PageBoundaryTests.test_every_admin_view_calls_guard_before_rendering_or_running) ... ok
+test_guest_navigation_registers_hidden_admin_views (test_admin_access_control.PageBoundaryTests.test_guest_navigation_registers_hidden_admin_views) ... ok
+test_admin_result_loads_in_user_from_memory_and_zip (test_admin_user_integration.AdminUserIntegrationTests.test_admin_result_loads_in_user_from_memory_and_zip) ... ok
+test_isolated_publish_preserves_records_and_recomputed_metrics (test_admin_user_integration.AdminUserIntegrationTests.test_isolated_publish_preserves_records_and_recomputed_metrics) ... ok
+test_admin_wrong_login_correct_login_all_pages_and_logout (test_app_ui.AppUiTests.test_admin_wrong_login_correct_login_all_pages_and_logout) ... 2026-10-19 01:54:31.471 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:31.575 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:31.575 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:31.610 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:31.612 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:31.612 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:31.612 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:31.612 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:31.612 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:31.729 DEBUG   streamlit.runtime.caching.cache_data_api: Creating new DataCache (key=7963f75ce3d918b93c0efa3107c53d71, persist=None, max_entries=None, ttl=None)
+2026-10-19 01:54:31.729 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:31.729 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache MISS: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:31.729 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache MISS: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:31.801 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.832 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:31.885 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.886 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:31.887 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:31.895 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.901 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.917 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:31.918 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.939 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:31.941 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.974 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:31.995 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:31.997 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.017 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:32.018 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.039 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:32.044 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.198 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.210 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.210 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.216 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.216 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.216 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.216 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.216 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.229 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.229 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.231 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.231 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.231 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.231 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.231 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.246 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.246 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.248 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.249 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.249 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.249 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.249 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.262 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.272 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.272 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.276 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.276 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.276 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.276 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.276 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.285 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.285 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.289 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.289 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.290 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.290 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.290 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.309 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.312 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.314 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.317 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.318 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.318 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.318 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.318 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.326 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.329 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.331 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.331 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.335 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.335 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.335 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.335 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.335 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.358 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.361 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.361 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.366 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.366 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.366 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.366 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.366 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.385 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.385 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.390 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.390 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.391 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.391 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.391 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.439 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.439 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.445 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.445 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.445 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.445 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.445 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.454 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.454 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.457 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.457 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.457 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.457 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.457 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.461 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.461 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.464 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.464 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.464 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.464 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.464 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.482 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.502 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:32.502 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:32.506 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.534 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:32.558 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.559 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:32.559 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:32.567 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.569 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.584 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:32.585 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.607 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:32.608 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.639 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.661 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:32.662 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.682 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:32.683 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.703 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:32.708 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.748 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.751 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.751 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:32.758 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.758 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.758 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.758 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.758 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.770 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:32.770 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_bad_comparison_and_missing_images_preserve_single_run_ui (test_app_ui.AppUiTests.test_bad_comparison_and_missing_images_preserve_single_run_ui) ... 2026-10-19 01:54:32.775 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:32.859 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:32.859 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:32.893 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:32.895 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:32.895 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:32.895 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:32.895 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:32.895 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:32.916 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:32.916 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:32.976 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:32.983 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.018 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.021 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:33.021 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_default_visitor_query_and_replay_controls (test_app_ui.AppUiTests.test_default_visitor_query_and_replay_controls) ... 2026-10-19 01:54:33.027 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:33.117 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:33.118 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:33.153 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:33.155 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:33.155 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:33.155 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:33.155 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:33.155 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:33.175 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.175 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.178 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.206 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:33.229 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.230 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:33.230 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:33.239 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.241 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.256 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:33.257 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.281 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:33.282 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.313 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.332 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:33.334 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.355 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:33.356 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.378 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:33.382 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.420 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.423 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:33.423 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:33.447 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:33.447 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:33.447 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:33.447 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:33.447 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:33.469 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.469 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.473 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.502 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:33.524 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.524 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:33.527 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:33.530 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.546 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:33.546 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.569 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:33.571 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.603 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.624 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:33.626 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.646 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:33.647 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.670 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:33.674 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.714 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.718 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:33.718 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:33.723 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:33.723 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:33.723 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:33.723 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:33.723 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:33.746 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.746 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:33.750 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.781 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:33.806 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.806 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:33.807 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:33.815 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.818 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.833 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:33.834 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.858 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:33.859 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.890 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.911 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:33.912 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.933 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:33.935 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.956 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:33.959 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:33.997 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.000 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:34.000 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:34.007 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:34.008 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:34.008 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:34.008 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:34.008 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:34.029 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.029 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.031 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.065 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:34.088 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.088 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:34.090 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:34.098 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.100 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.116 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:34.117 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.139 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:34.140 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.173 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.192 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:34.194 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.215 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:34.216 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.238 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:34.242 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.282 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.285 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:34.285 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:34.289 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:34.290 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:34.290 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:34.290 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:34.290 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:34.312 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.312 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.315 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.347 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:34.369 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.369 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:34.372 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:34.380 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.383 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.398 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:34.399 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.423 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:34.423 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.457 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.478 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:34.480 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.502 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:34.503 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.526 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:34.530 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.541 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.581 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.585 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:34.585 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_independent_visitor_refresh_replaces_entire_comparison (test_app_ui.AppUiTests.test_independent_visitor_refresh_replaces_entire_comparison) ... 2026-10-19 01:54:34.633 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:34.726 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:34.726 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:34.763 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:34.764 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:34.764 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:34.764 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:34.765 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:34.765 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:34.788 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.788 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:34.791 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.823 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:34.855 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.855 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:34.856 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:34.862 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.863 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.879 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:34.880 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.903 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:34.904 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.937 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.958 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:34.959 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:34.981 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:34.982 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.003 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:35.008 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.047 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.057 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.135 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.161 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.185 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.187 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:35.188 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:35.248 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:35.249 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:35.249 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:35.249 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:35.249 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:35.270 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:35.270 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:35.273 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.302 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:35.335 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.336 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:35.338 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:35.344 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.347 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.362 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:35.363 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.385 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:35.387 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.417 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.437 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:35.438 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.460 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:35.460 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.484 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:35.488 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.525 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.528 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.552 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.578 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.603 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.606 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:35.606 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:35.618 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:35.619 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:35.619 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:35.619 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:35.619 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:35.640 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:35.641 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:35.644 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.672 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:35.719 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.720 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:35.721 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:35.727 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.730 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.745 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:35.745 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.767 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:35.768 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.800 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.818 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:35.820 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.842 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:35.843 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.865 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:35.869 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.906 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:35.909 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:35.909 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_scenario_editor_to_admin_comparison_to_independent_visitor (test_app_ui.AppUiTests.test_scenario_editor_to_admin_comparison_to_independent_visitor) ... 2026-10-19 01:54:35.914 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:35.995 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:35.995 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:36.030 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:36.041 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.042 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.042 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.042 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.042 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.064 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:36.064 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:36.067 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.095 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:36.116 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.116 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:36.119 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:36.126 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.129 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.143 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:36.144 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.168 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:36.169 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.200 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.219 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:36.220 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.242 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:36.244 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.266 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:36.270 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.309 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.312 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.312 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.342 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.343 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.343 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.343 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.343 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.359 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.359 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.372 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.373 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.373 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.373 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.373 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.386 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.386 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.386 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.386 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.386 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.387 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.393 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.393 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.421 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.421 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.421 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.421 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.421 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.450 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.453 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.453 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.466 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.467 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.467 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.467 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.467 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.491 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.493 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.493 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.515 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.515 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.515 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.515 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.515 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.535 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.535 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.561 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.562 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.562 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.562 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.562 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.607 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.610 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 3b1b4766b53cd4e3d7660810da515918
+2026-10-19 01:54:36.612 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:36.612 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:36.653 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:36.750 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:36.750 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:36.789 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:36.790 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:36.791 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:36.791 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:36.791 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:36.791 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:36.810 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:36.810 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:36.814 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.843 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:36.878 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.879 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:36.879 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:36.886 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.889 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.905 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:36.906 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.929 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:36.931 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.964 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:36.984 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:36.985 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.007 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:37.008 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.030 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:37.034 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.073 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.076 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.102 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.127 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.150 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.152 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:37.153 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_uploaded_four_csv_zip_remains_single_run (test_app_ui.AppUiTests.test_uploaded_four_csv_zip_remains_single_run) ... 2026-10-19 01:54:37.159 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-19 01:54:37.250 DEBUG   streamlit.components.v2.manifest_scanner: Filtered 71 packages down to 1 candidates for component scanning
+2026-10-19 01:54:37.250 DEBUG   streamlit.components.v2.manifest_scanner: Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-10-19 01:54:37.285 DEBUG   streamlit.components.v2.manifest_scanner: Found 0 component manifests total
+2026-10-19 01:54:37.287 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:37.288 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:37.288 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:37.288 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:37.288 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:37.309 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.309 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.312 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.341 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:37.364 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.365 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:37.365 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:37.373 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.376 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.392 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:37.393 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.415 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:37.416 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.448 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.467 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:37.469 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.488 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:37.490 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.510 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:37.514 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.554 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.558 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:37.558 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:37.581 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:37.581 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:37.581 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:37.581 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:37.581 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:37.605 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.605 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.608 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.638 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:37.639 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:37.639 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+2026-10-19 01:54:37.644 DEBUG   streamlit.runtime.scriptrunner.script_runner: Beginning script thread
+2026-10-19 01:54:37.645 DEBUG   streamlit.runtime.scriptrunner.script_runner: Running script
+2026-10-19 01:54:37.645 DEBUG   streamlit.runtime.media_file_manager: Disconnecting files for session with ID test session id
+2026-10-19 01:54:37.645 DEBUG   streamlit.runtime.media_file_manager: Sessions still active: dict_keys([])
+2026-10-19 01:54:37.645 DEBUG   streamlit.runtime.media_file_manager: Files: 0; Sessions with files: 0
+2026-10-19 01:54:37.666 DEBUG   streamlit.runtime.caching.cache_utils: Cache key: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.666 DEBUG   streamlit.runtime.caching.storage.in_memory_cache_storage_wrapper: Memory cache HIT: cae66941d9efbd404e4d88758ea67670
+2026-10-19 01:54:37.669 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.699 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file eca9c904e9a06111e7141a04dad5a6fe
+2026-10-19 01:54:37.730 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.731 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 17687551749e73be77675fd1fe4336b1
+2026-10-19 01:54:37.731 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 8534fd87234c43fd41bd07c35523ff71
+2026-10-19 01:54:37.739 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.741 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.758 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 45e80b01b75be664079b3098815d751f
+2026-10-19 01:54:37.758 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.781 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file c0e3ae069a896a64ae58cf7a98a1b06d
+2026-10-19 01:54:37.782 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.812 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.836 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 95c705e99153fcfd85587e5ad4e9b0b0
+2026-10-19 01:54:37.838 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.859 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 2f0d8ecb5c302679160ad85e1758a236
+2026-10-19 01:54:37.860 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.881 DEBUG   streamlit.runtime.memory_media_file_storage: Adding media file 876feebc9fc7b99d77ff1bb611aa80bc
+2026-10-19 01:54:37.884 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.927 WARNING streamlit.deprecation_util: Please replace `use_container_width` with `width`.
+
+`use_container_width` will be removed after 2025-12-31.
+
+For `use_container_width=True`, use `width='stretch'`. For `use_container_width=False`, use `width='content'`.
+2026-10-19 01:54:37.930 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned files...
+2026-10-19 01:54:37.930 DEBUG   streamlit.runtime.media_file_manager: Removing orphaned deferred callables...
+ok
+test_atomic_replace_failure_keeps_previous_archive_and_removes_temp_file (test_comparison_publishing.ComparisonPublishingTests.test_atomic_replace_failure_keeps_previous_archive_and_removes_temp_file) ... ok
+test_changed_csv_wait_or_board_time_cannot_keep_stale_comparison_metrics (test_comparison_publishing.ComparisonPublishingTests.test_changed_csv_wait_or_board_time_cannot_keep_stale_comparison_metrics) ... ok
+test_changed_selected_csv_queue_is_not_attached_to_comparison (test_comparison_publishing.ComparisonPublishingTests.test_changed_selected_csv_queue_is_not_attached_to_comparison) ... ok
+test_consistently_changed_csv_wait_and_board_time_are_detected_by_metric_recalculation (test_comparison_publishing.ComparisonPublishingTests.test_consistently_changed_csv_wait_and_board_time_are_detected_by_metric_recalculation) ... ok
+test_corrupt_or_cross_run_metadata_degrades_to_valid_single_run (test_comparison_publishing.ComparisonPublishingTests.test_corrupt_or_cross_run_metadata_degrades_to_valid_single_run) ... ok
+test_duplicate_or_incomplete_strategies_and_foreign_selected_run_are_rejected (test_comparison_publishing.ComparisonPublishingTests.test_duplicate_or_incomplete_strategies_and_foreign_selected_run_are_rejected) ... ok
+test_following_single_run_removes_stale_comparison (test_comparison_publishing.ComparisonPublishingTests.test_following_single_run_removes_stale_comparison) ... ok
+test_four_csv_contents_are_byte_identical_with_metadata_added (test_comparison_publishing.ComparisonPublishingTests.test_four_csv_contents_are_byte_identical_with_metadata_added) ... ok
+test_invalid_or_nonfinite_metadata_is_not_displayed (test_comparison_publishing.ComparisonPublishingTests.test_invalid_or_nonfinite_metadata_is_not_displayed) ... ok
+test_metadata_is_detached_and_deterministic_for_identical_inputs (test_comparison_publishing.ComparisonPublishingTests.test_metadata_is_detached_and_deterministic_for_identical_inputs) ... ok
+test_missing_publish_has_no_run_or_comparison (test_comparison_publishing.ComparisonPublishingTests.test_missing_publish_has_no_run_or_comparison) ... ok
+test_mixed_parameters_seed_and_demand_cannot_replace_previous_publish (test_comparison_publishing.ComparisonPublishingTests.test_mixed_parameters_seed_and_demand_cannot_replace_previous_publish) ... ok
+test_roundtrip_preserves_all_metrics_params_and_queue_series (test_comparison_publishing.ComparisonPublishingTests.test_roundtrip_preserves_all_metrics_params_and_queue_series) ... ok
+test_separate_process_can_read_published_comparison_without_admin_session (test_comparison_publishing.ComparisonPublishingTests.test_separate_process_can_read_published_comparison_without_admin_session) ... ok
+test_unauthorized_comparison_publish_fails_before_export_or_creating_directory (test_comparison_publishing.ComparisonPublishingTests.test_unauthorized_comparison_publish_fails_before_export_or_creating_directory) ... ok
+test_unreadable_optional_metadata_degrades_without_hiding_csv_errors (test_comparison_publishing.ComparisonPublishingTests.test_unreadable_optional_metadata_degrades_without_hiding_csv_errors) ... ok
+test_csv_schemas_round_trip_and_shared_station_mapping (test_exports_and_models.ContractTests.test_csv_schemas_round_trip_and_shared_station_mapping) ... ok
+test_disruption_and_tidal_switch_change_demand_signature (test_exports_and_models.ContractTests.test_disruption_and_tidal_switch_change_demand_signature) ... ok
+test_disruption_drop_actually_drops_arrivals (test_exports_and_models.ContractTests.test_disruption_drop_actually_drops_arrivals) ... ok
+test_passenger_conservation_and_od (test_exports_and_models.ContractTests.test_passenger_conservation_and_od) ... ok
+test_route_occupancy_limit_and_no_teleport (test_exports_and_models.ContractTests.test_route_occupancy_limit_and_no_teleport) ... ok
+test_same_seed_is_reproducible_and_different_strategies_share_demand (test_exports_and_models.ContractTests.test_same_seed_is_reproducible_and_different_strategies_share_demand) ... ok
+test_unsupported_strategy_and_broken_parameters_raise_errors (test_exports_and_models.ContractTests.test_unsupported_strategy_and_broken_parameters_raise_errors) ... ok
+test_assets_do_not_depend_on_current_directory (test_media_assets.MediaAssetTests.test_assets_do_not_depend_on_current_directory) ... ok
+test_delivered_images_are_decodable_and_project_relative (test_media_assets.MediaAssetTests.test_delivered_images_are_decodable_and_project_relative) ... ok
+test_missing_and_corrupt_assets_are_optional (test_media_assets.MediaAssetTests.test_missing_and_corrupt_assets_are_optional) ... ok
+test_render_missing_image_only_emits_caption (test_media_assets.MediaAssetTests.test_render_missing_image_only_emits_caption) ... ok
+test_forecast_never_reads_future_passenger_events (test_optimizer.OptimizedSimulationTests.test_forecast_never_reads_future_passenger_events) ... ok
+test_optimized_repeatable (test_optimizer.OptimizedSimulationTests.test_optimized_repeatable) ... ok
+test_scalable_fleet (test_optimizer.OptimizedSimulationTests.test_scalable_fleet) ... ok
+test_three_policies_fair_input (test_optimizer.OptimizedSimulationTests.test_three_policies_fair_input) ... ok
+test_zero_arrivals_no_dispatch (test_optimizer.OptimizedSimulationTests.test_zero_arrivals_no_dispatch) ... ok
+test_zero_vehicle_no_ghost_service (test_optimizer.OptimizedSimulationTests.test_zero_vehicle_no_ghost_service) ... ok
+test_exact_od_and_complete_future_trip_only (test_route_recommendation.RouteRecommendationTests.test_exact_od_and_complete_future_trip_only) ... ok
+test_no_direct_route_or_same_station (test_route_recommendation.RouteRecommendationTests.test_no_direct_route_or_same_station) ... ok
+test_replay_time_must_be_finite (test_route_recommendation.RouteRecommendationTests.test_replay_time_must_be_finite) ... ok
+test_reverse_direction_uses_station_order (test_route_recommendation.RouteRecommendationTests.test_reverse_direction_uses_station_order) ... ok
+test_unobserved_route_remains_without_numeric_estimate (test_route_recommendation.RouteRecommendationTests.test_unobserved_route_remains_without_numeric_estimate) ... ok
+test_loaded_scenario_is_detached_from_saved_snapshot (test_scenario_state.ScenarioStateTests.test_loaded_scenario_is_detached_from_saved_snapshot) ... ok
+test_missing_or_invalid_scenario_cannot_be_loaded (test_scenario_state.ScenarioStateTests.test_missing_or_invalid_scenario_cannot_be_loaded) ... ok
+test_saved_scenario_is_the_one_used_by_simulation (test_scenario_state.ScenarioStateTests.test_saved_scenario_is_the_one_used_by_simulation) ... ok
+test_latest_run_is_complete_and_replaced (test_shared_run_store.SharedRunStoreTests.test_latest_run_is_complete_and_replaced) ... ok
+test_in_memory_wrong_run_id_rejected (test_user_data_adapter.TestUserAdapter.test_in_memory_wrong_run_id_rejected) ... ok
+test_old_csv_compatible (test_user_data_adapter.TestUserAdapter.test_old_csv_compatible) ... ok
+test_zip_import_original_csv (test_user_data_adapter.TestUserAdapter.test_zip_import_original_csv) ... ok
+
+----------------------------------------------------------------------
+Ran 67 tests in 12.451s
+
+OK

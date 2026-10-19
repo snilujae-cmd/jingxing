@@ -3,10 +3,13 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 from admin_auth import require_admin_page
+from utils.style import apply_plotly_theme, page_header, section_header
 
 require_admin_page()
 
-st.title("📊 Admin端 · 实验效果分析")
+page_header("实验分析", "保存本会话已完成的运行，核对客流签名与参数，再比较调度结果。", "ADMIN · EXPERIMENTS")
+st.caption("会话实验记录与游客端已发布的三策略比较分别管理；保存实验不会自动对游客发布。")
+section_header("实验记录", "操作区域用于保存与导出，右侧表格保留每次运行的参数和指标。")
 
 if "experiments" not in st.session_state:
     st.session_state.experiments = []
@@ -65,9 +68,9 @@ if st.session_state.experiments:
         st.subheader("📊 已上车游客等待时间对比")
         df = pd.DataFrame(st.session_state.experiments)
         fig = go.Figure()
-        fig.add_trace(go.Bar(name="平均等待", x=df["编号"], y=df["平均等待"], marker_color="#5B8FF9"))
-        fig.add_trace(go.Bar(name="P95等待", x=df["编号"], y=df["P95等待"], marker_color="#F6BD16"))
+        fig.add_trace(go.Bar(name="平均等待", x=df["编号"], y=df["平均等待"], marker_color="#1E6F5C"))
+        fig.add_trace(go.Bar(name="P95等待", x=df["编号"], y=df["P95等待"], marker_color="#C6A15A"))
         fig.update_layout(barmode="group", height=350, yaxis_title="分钟")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(apply_plotly_theme(fig), use_container_width=True)
 
 st.markdown('<div class="footer-text">⚠️ 所有结果由程序生成，不代表景区实测。</div>', unsafe_allow_html=True)
