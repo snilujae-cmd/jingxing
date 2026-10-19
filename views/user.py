@@ -158,7 +158,7 @@ with tab1:
 
     with st.container(border=True):
         st.subheader("景区观光车线路总览")
-        render_image("routes", caption="用户提供的原始线路图 · 保留完整图例与文字；来源、日期及授权待确认")
+        render_image("routes", caption="图片来源：钟山风景区官方/公开资料 · 保留完整图例与文字；仅供研究参考")
         original_map = asset_download("routes")
         if original_map is not None:
             st.download_button("下载线路原图，放大查看", data=original_map,
