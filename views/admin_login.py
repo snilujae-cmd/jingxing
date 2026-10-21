@@ -46,5 +46,5 @@ with right:
     st.markdown("""
     <div class="jx-login-intro">
       <p>管理端仅用于科研情景仿真、结果分析和共享发布，不代表真实景区运营控制台。</p>
-      <small>背景：林荫道路 · 原图水印署名「钟山风景名胜区」；素材由用户提供。</small>
+      <small>背景：林荫道路 · 图片来源：钟山风景名胜区</small>
     </div>""", unsafe_allow_html=True)
