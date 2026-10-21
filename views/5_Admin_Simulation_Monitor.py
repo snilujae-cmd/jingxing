@@ -3,9 +3,11 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 from admin_auth import require_admin_page
-from utils.style import apply_plotly_theme, page_header, section_header
+from utils.style import admin_navigation, apply_plotly_theme, page_header, page_surface, section_header
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("仿真监测")
 
 page_header("仿真监测", "读取最近一次运行的站点排队、已上车游客候车分布与时序记录。", "ADMIN · SIMULATION")
 r = st.session_state.get("last_result")

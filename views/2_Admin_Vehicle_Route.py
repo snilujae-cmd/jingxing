@@ -4,9 +4,11 @@ from admin_auth import require_admin_page
 from data.stations import STATIONS
 from data.routes import ROUTES
 from data.segments import SEGMENTS
-from utils.style import page_header
+from utils.style import admin_navigation, page_header, page_surface
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("车辆与线路")
 
 page_header("车辆与线路", "核对 A/B 研究线路、站点顺序及路段参数。公开线路信息与模型估算分别标明。", "ADMIN · NETWORK")
 

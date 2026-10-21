@@ -3,9 +3,11 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime
 from admin_auth import require_admin_page
-from utils.style import apply_plotly_theme, page_header, section_header
+from utils.style import admin_navigation, apply_plotly_theme, page_header, page_surface, section_header
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("实验分析")
 
 page_header("实验分析", "保存本会话已完成的运行，核对客流签名与参数，再比较调度结果。", "ADMIN · EXPERIMENTS")
 st.caption("会话实验记录与游客端已发布的三策略比较分别管理；保存实验不会自动对游客发布。")

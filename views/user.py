@@ -1,4 +1,4 @@
-"""景行智调 · 游客端。既能单独测试，也能在未来并入 Admin V1 单网站。"""
+"""景行智调游客端：三个可切换模块共用同一次已完成仿真。"""
 from datetime import datetime
 from pathlib import Path
 import sys
@@ -16,8 +16,9 @@ from user_data_adapter import (DataContractError, load_admin_result,
                                load_run_folder, load_run_zip)
 from shared_run_store import load_shared_bundle, shared_run_path
 from route_recommendation import recommend_direct_routes
+from data.routes import ROUTES
 from utils.media import asset_download, render_image
-from utils.style import apply_plotly_theme
+from utils.style import apply_plotly_theme, page_surface
 
 
 @st.cache_data(show_spinner=False)
@@ -32,16 +33,31 @@ station_names = stations.set_index("station_id")["station_name"].to_dict()
 station_options = [f"{r.station_id} {r.station_name}" for r in stations.itertuples()]
 station_map = {f"{r.station_id} {r.station_name}": r.station_id for r in stations.itertuples()}
 
-
-hero_text, hero_photo = st.columns([1.05, 1.35], gap="large", vertical_alignment="center")
-with hero_text:
-    st.caption("南京钟山风景区 · 接驳出行科研仿真")
-    st.title("景行智调·游客出行助手")
-    st.write("把线路看清楚，让游览更从容。查找研究线路与站点，回看接驳车仿真，了解不同调度策略下的候车情况。")
-    st.caption("线路查询 · 仿真回放 · 趋势分析与已发布策略比较")
-with hero_photo:
-    render_image("liuhuixie", caption="流徽榭 · 图片来源：钟山风景区")
+page_surface("user")
+st.page_link("views/portal.py", label="返回平台首页", icon="🏠")
+st.caption("南京钟山风景区 · 接驳出行科研仿真")
+st.title("景行智调 · 游客出行助手")
+st.write("查线路、选站点、看推荐，让景区出行更清楚。")
 st.info("科研情景仿真：车辆、排队、候车与策略比较均来自模拟结果，不代表景区真实实时运营数据或官方调度信息。")
+
+MODULES = (
+    ("routes", "线路查询与推荐", "选择起点和终点，比较可选接驳线路。"),
+    ("replay", "仿真回放与候车", "看看不同仿真时刻的车辆与排队变化。"),
+    ("trends", "候车趋势与研究展示", "查看站点排队趋势，按需了解调度策略比较。"),
+)
+if st.session_state.get("user_module") not in {item[0] for item in MODULES}:
+    st.session_state["user_module"] = "routes"
+active_module = st.session_state["user_module"]
+for column, (module_key, title, description) in zip(st.columns(3, gap="medium"), MODULES):
+    with column, st.container(border=True):
+        marker = "jx-module-active" if module_key == active_module else "jx-module"
+        st.markdown(f'<div class="{marker}"></div>', unsafe_allow_html=True)
+        if st.button(title, key=f"user_module_{module_key}",
+                     type="primary" if module_key == active_module else "secondary",
+                     use_container_width=True):
+            st.session_state["user_module"] = module_key
+            st.rerun()
+        st.markdown(f'<div class="jx-module-copy">{description}</div>', unsafe_allow_html=True)
 
 published_comparison = None
 comparison_error = None
@@ -138,16 +154,76 @@ def display_minutes(value):
 
 
 default_index = min(range(len(all_times)), key=lambda i: abs(all_times[i] - 60))
-with st.container(border=True):
-    t = st.select_slider("选择仿真回放时刻", options=all_times, value=all_times[default_index],
-                         format_func=format_t)
-    st.caption("此控件同时影响线路查询中的历史记录比较与仿真回放；08:00为相对演示时钟，不代表景区实际运营时刻。")
 
-tab1, tab2, tab3 = st.tabs(["线路查询", "仿真回放与候车", "趋势分析与策略比较"])
 
-with tab1:
-    st.subheader("先了解线路，再选择出发站点")
-    st.caption("研究范围为 A、B 两条接驳线路。地图提供景区总体参考；可查询站点以系统研究站序为准。")
+def select_replay_time():
+    """Keep the selected time across module switches without changing run data."""
+    previous = st.session_state.get("user_selected_time", all_times[default_index])
+    if previous not in all_times:
+        previous = all_times[default_index]
+    if st.session_state.get("user_time_slider") not in all_times:
+        st.session_state["user_time_slider"] = previous
+    selected = st.select_slider("选择仿真回放时刻", options=all_times,
+                                format_func=format_t, key="user_time_slider")
+    st.session_state["user_selected_time"] = selected
+    st.caption("这是仿真相对时刻，不是景区真实运营时间。")
+    return selected
+
+
+if active_module == "routes":
+    st.subheader("从哪里出发？想去哪里？")
+    st.write("选择出发站和目的站，系统将根据当前仿真记录比较可用直达线路。")
+    with st.container(border=True):
+        c1, c2 = st.columns(2)
+        with c1:
+            origin_label = st.selectbox("出发站点", station_options, index=2, key="od_origin")
+        with c2:
+            dest_label = st.selectbox("目的站点", station_options, index=4, key="od_dest")
+        t = select_replay_time()
+        st.caption(f"比较时间：{format_t(t)}；数据来自运行 {run.run_id}。")
+        start, stop = station_map[origin_label], station_map[dest_label]
+        query_signature = (run.run_id, start, stop, float(t))
+        if st.button("查看推荐路线", type="primary", use_container_width=True,
+                     key="user_show_route_recommendation"):
+            st.session_state["user_route_query"] = query_signature
+        if st.session_state.get("user_route_query") == query_signature:
+            if start == stop:
+                st.warning("出发站点和目的站点相同，请重新选择。")
+            else:
+                routes = recommend_direct_routes(stop_order, run, start, stop, t)
+                completed = [item for item in routes if item["total_replay_min"] is not None]
+                if not routes:
+                    st.info("当前研究线路中没有支持该起终点的直达方案。")
+                elif not completed:
+                    st.info("当前仿真没有足够的同起终点完整记录，可换一个时刻或站点查看。")
+                else:
+                    recommended = completed[0]
+                    route_name = ROUTES.get(recommended["route_id"], {}).get(
+                        "name", f"{recommended['route_id']} 线")
+                    with st.container(border=True):
+                        st.subheader(f"本次仿真推荐：{route_name}{recommended['direction']}")
+                        st.write("在当前仿真记录中，该路线的同起终点乘客回放总间隔较短。")
+                        m1, m2, m3 = st.columns(3)
+                        m1.metric("仿真候车记录参考（分钟）", f"{recommended['replay_wait_min']:.1f}")
+                        m2.metric("仿真乘车记录参考（分钟）", f"{recommended['ride_time_min']:.1f}")
+                        m3.metric("仿真行程总间隔参考（分钟）", f"{recommended['total_replay_min']:.1f}")
+                if routes:
+                    rows = [{
+                        "线路": f"{item['route_id']} 线", "方向": item["direction"],
+                        "仿真候车记录参考（分钟）": display_minutes(item["replay_wait_min"]),
+                        "仿真乘车记录参考（分钟）": display_minutes(item["ride_time_min"]),
+                        "仿真行程总间隔参考（分钟）": display_minutes(item["total_replay_min"]),
+                        "记录情况": "完整仿真记录" if item["total_replay_min"] is not None else "无完整同OD记录",
+                    } for item in routes]
+                    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+                st.caption("仅比较同一次仿真中完整的同起终点乘客记录。"
+                           "结果来自已完成仿真记录，不代表实时到站时间、实际车次或乘车保证。"
+                           "返程道路与站序仍待核验。")
+        else:
+            st.caption("选择站点和仿真时刻后，点击“查看推荐路线”。")
+
+    st.subheader("A/B 研究线路")
+    st.caption("研究范围为 A、B 两条接驳线路；可查询站点以系统研究站序为准。")
     line_a, line_b = st.columns(2)
     with line_a, st.container(border=True):
         st.markdown("**A 线 · 5 个研究站点**")
@@ -156,15 +232,37 @@ with tab1:
         st.markdown("**B 线 · 4 个研究站点**")
         st.write("紫金·钟爱里 → 灵谷景区 → 流徽榭 → 孙中山纪念馆")
 
+    st.subheader("沿线景点")
+    st.caption("照片用于认识沿线景点，查询站点保持现有 A/B 模型范围。图片来源钟山风景区。")
+    for column, key, title, note in zip(
+        st.columns(4),
+        ("sports", "linggu", "liuhuixie", "memorial"),
+        ("钟山体育公园", "灵谷寺", "流徽榭", "孙中山纪念馆"),
+        ("对应研究站点：体育公园", "灵谷景区内景点；查询选择灵谷景区", "A/B 研究线路共线站点", "A/B 研究线路共线站点"),
+    ):
+        with column, st.container(border=True):
+            render_image(key)
+            st.markdown(f"**{title}**")
+            st.caption(note)
+
+    with st.expander("景区其他游览参考", expanded=False):
+        st.caption("美龄宫、紫金山天文台不在本系统 A/B 研究站序内；以下照片仅供认识景区，不构成直达线路推荐。")
+        for column, key, title in zip(st.columns(2), ("meiling", "observatory"), ("美龄宫", "紫金山天文台")):
+            with column, st.container(border=True):
+                render_image(key, caption=f"{title} · 图片来源：钟山风景区")
+                st.markdown(f"**{title}**")
+                st.caption("其他游览参考 · 不在当前 A/B 可查询站序内")
+
     with st.container(border=True):
-        st.subheader("景区观光车线路总览")
+        st.subheader("景区观光车线路参考图")
         render_image("routes", caption="图片来源：钟山风景区/公开资料 · 保留完整图例与文字；仅供研究参考")
         original_map = asset_download("routes")
         if original_map is not None:
             st.download_button("下载线路原图，放大查看", data=original_map,
                                file_name="钟山风景区_观光车线路图.jpg", mime="image/jpeg",
                                key="user_route_map_download")
-        st.caption("该图包含景区其他线路，不能视为本系统 A/B 研究线路的实时运营承诺。出行请以景区现行公告为准。")
+        st.caption("地图包含本研究范围以外的线路；可查询站点以页面所列 A/B 研究线路为准。"
+                   "出行请以景区现行公告为准。")
 
     with st.expander("查看 A/B 研究站序拓扑与说明", expanded=False):
         dot = """
@@ -189,61 +287,11 @@ with tab1:
         """
         st.graphviz_chart(dot)
         st.caption("这是站序拓扑图，不是GPS导航图；道路/返程方向尚需核验。")
+if active_module == "replay":
+    st.subheader("看看这一刻的接驳情况")
+    st.write("拖动仿真时间，查看车辆运行与站点排队的模拟变化。")
     with st.container(border=True):
-        st.subheader("选择起终点 · 比较直达线路")
-        st.caption(f"比较时间：{format_t(t)}；数据来自运行 {run.run_id}。")
-        c1, c2 = st.columns(2)
-        with c1:
-            origin_label = st.selectbox("起点", station_options, index=2, key="od_origin")
-        with c2:
-            dest_label = st.selectbox("终点", station_options, index=4, key="od_dest")
-        start, stop = station_map[origin_label], station_map[dest_label]
-        if start == stop:
-            st.warning("起点和终点相同，请重新选择。")
-        else:
-            routes = recommend_direct_routes(stop_order, run, start, stop, t)
-            if routes:
-                rows = []
-                for item in routes:
-                    rows.append({
-                        "线路": item["route_id"], "方向": item["direction"],
-                        "下次同OD上车记录间隔(分钟)": display_minutes(item["replay_wait_min"]),
-                        "该乘客乘车(分钟)": display_minutes(item["ride_time_min"]),
-                        "到该乘客下车共(分钟)": display_minutes(item["total_replay_min"]),
-                        "记录情况": "完整仿真记录" if item["total_replay_min"] is not None else "无完整同OD记录",
-                    })
-                st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
-                if routes[0]["total_replay_min"] is not None:
-                    st.info(f"按本次仿真中下一名完成该OD行程的乘客记录，{routes[0]['route_id']}线"
-                            f"{routes[0]['direction']}的回放总间隔最短。")
-                st.caption("比较只使用同一次仿真中完整的同起终点乘客记录。"
-                           "空白表示没有可比较记录；不代表实时到站预测或座位保证。"
-                           "返程道路与站序仍待核验。")
-            else:
-                st.info("当前范围内没有支持该OD的直达线路；换乘功能待开发。")
-
-    st.subheader("沿线景点")
-    st.caption("照片用于认识沿线景点，查询站点保持现有 A/B 模型范围。图片来源钟山风景区。")
-    for column, key, title, note in zip(
-        st.columns(4),
-        ("sports", "linggu", "liuhuixie", "memorial"),
-        ("钟山体育公园", "灵谷寺", "流徽榭", "孙中山纪念馆"),
-        ("对应研究站点：体育公园", "灵谷景区内景点；查询选择灵谷景区", "A/B 研究线路共线站点", "A/B 研究线路共线站点"),
-    ):
-        with column, st.container(border=True):
-            render_image(key)
-            st.markdown(f"**{title}**")
-            st.caption(note)
-
-    with st.expander("景区其他游览参考", expanded=False):
-        st.caption("美龄宫、紫金山天文台不在本系统 A/B 研究站序内；以下照片仅供认识景区，不构成直达线路推荐。")
-        for column, key, title in zip(st.columns(2), ("meiling", "observatory"), ("美龄宫", "紫金山天文台")):
-            with column, st.container(border=True):
-                render_image(key, caption=f"{title} · 图片来源：钟山风景区")
-                st.markdown(f"**{title}**")
-                st.caption("其他游览参考 · 不在当前 A/B 可查询站序内")
-
-with tab2:
+        t = select_replay_time()
     with st.container(border=True):
         st.subheader("这一刻的接驳仿真")
         st.caption(f"当前回放：{format_t(t)} · 运行编号：{run.run_id}")
@@ -320,8 +368,9 @@ with tab2:
                     else:
                         st.info("当前时刻之后没有完整的同OD乘车记录，无法提供候车参考。")
 
-with tab3:
-    st.subheader("本次仿真的排队变化")
+if active_module == "trends":
+    st.subheader("各站点排队是怎样变化的？")
+    st.write("曲线反映当前仿真中不同站点的排队人数变化。")
     with st.container(border=True):
         st.subheader("各站点排队人数趋势")
         trends = station_state.pivot_table(index="time_min", columns=["route_id", "station_name"],
@@ -335,8 +384,9 @@ with tab3:
         st.caption(f"当前回放时间范围：{min(all_times):g}～{max(all_times):g}分钟；"
                    f"曲线来自当前运行 {run.run_id}，不同参数会产生不同结果。")
 
-    st.subheader("Admin 已发布的三策略比较")
-    st.caption("游客只读查看已完成并发布的比较组；后台参数设置和调度执行仍由管理员操作。")
+    st.subheader("调度研究结果（选看）")
+    st.caption("以下图表对比三种仿真调度方式的表现，属于研究分析，不是游客实时路况。"
+               "游客只读查看已完成并发布的比较组；后台参数设置和调度执行仍由管理员操作。")
     if published_comparison is None:
         if comparison_error:
             st.info("当前比较资料未通过校验，已保留上方单次仿真趋势。请等待管理员重新发布完整比较。")

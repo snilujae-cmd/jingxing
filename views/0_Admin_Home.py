@@ -1,29 +1,44 @@
-"""Admin 菜单首页；原 app.py 的入口内容移入这里。"""
+"""景行智调 · 六模块管理工作台。"""
+
 import streamlit as st
+
 from admin_auth import require_admin_page
-from utils.style import page_header, section_header
+from utils.style import admin_navigation, page_header, page_surface
+
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("工作台")
+page_header(
+    "景行智调 · 智能调度管理中心",
+    "统一配置研究线路与客流场景，运行调度策略，监测仿真过程并分析实验结果。",
+    "ADMIN · WORKSPACE",
+)
 
-page_header("景行智调 · 管理工作台", "围绕同一场景设置、运行和比较接驳调度策略，向游客提供已发布的科研仿真结果。", "ADMIN · 入口说明")
-st.info("科研情景仿真：系统未接入景区真实实时车辆、排队或官方调度数据。")
-section_header("从场景到出行参考", "先确认研究线路与模型边界，再设置场景、运行策略并检查结果。")
+modules = [
+    ("01", "调度控制台", "集中查看当前会话的模型配置、运行状态和关键指标。",
+     "views/1_Admin_Dashboard.py"),
+    ("02", "车辆与线路", "查看研究站点、线路结构与路段数据。",
+     "views/2_Admin_Vehicle_Route.py"),
+    ("03", "客流场景", "设置客流模式、基准到达率、仿真时长及潮汐/突发条件。",
+     "views/3_Admin_Demand_Scenario.py"),
+    ("04", "智能调度", "配置车队与策略参数，执行单策略仿真或同场景三策略比较。",
+     "views/4_Admin_Smart_Dispatch.py"),
+    ("05", "仿真监测", "查看车辆、站点排队和候车时间等仿真指标。",
+     "views/5_Admin_Simulation_Monitor.py"),
+    ("06", "实验分析", "回顾会话内实验记录，对比已完成仿真的指标与图表。",
+     "views/6_Admin_Experiment_Analysis.py"),
+]
 
-c1, c2, c3 = st.columns(3)
-with c1:
-    with st.container(border=True):
-        st.subheader("01 · 车辆与线路")
-        st.write("站点、线路及估算路段距离；车辆数可在调度页调整。")
-        st.page_link("views/2_Admin_Vehicle_Route.py", label="查看研究网络", icon="🚌")
-with c2:
-    with st.container(border=True):
-        st.subheader("02 · 智能调度")
-        st.write("固定间隔、动态阈值和滚动预测三种策略。")
-        st.page_link("views/4_Admin_Smart_Dispatch.py", label="进入调度工作区", icon="🧠")
-with c3:
-    with st.container(border=True):
-        st.subheader("03 · 检查与发布")
-        st.write("真实读取本轮仿真记录，支持导出四份CSV。")
-        st.page_link("views/5_Admin_Simulation_Monitor.py", label="检查仿真结果", icon="📊")
+for row in (modules[:3], modules[3:]):
+    for column, (number, title, description, path) in zip(st.columns(3, gap="large"), row):
+        with column:
+            with st.container(border=True):
+                st.markdown(
+                    f'<div class="jx-admin-card"><div class="jx-number">{number} / MODULE</div>'
+                    f'<h3>{title}</h3><p>{description}</p></div>',
+                    unsafe_allow_html=True,
+                )
+                st.page_link(path, label=f"进入{title} →", use_container_width=True)
 
-st.caption("⚠️ 车队规模、客流、双向折返等属于模型假设；结果不是钟山风景区实测数据。")
+st.caption("科研情景仿真结果来自真实运行；车辆、客流和调度参数不代表景区实时运营数据。")

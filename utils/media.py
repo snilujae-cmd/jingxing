@@ -1,4 +1,6 @@
 """Project-local scenic assets with a non-blocking image fallback."""
+from base64 import b64encode
+from functools import lru_cache
 from io import BytesIO
 from pathlib import Path
 
@@ -14,6 +16,8 @@ ASSET_FILES = {
     "meiling": "assets/user/scenery/meiling_palace.webp",
     "observatory": "assets/user/scenery/observatory.webp",
     "routes": "assets/user/maps/sightseeing_routes.jpg",
+    "portal": "assets/brand/liuhuixie.jpg",
+    "admin_login": "assets/brand/forest_road.jpg",
 }
 
 
@@ -31,6 +35,17 @@ def asset_download(asset_key: str) -> bytes | None:
         return content
     except (KeyError, OSError, ValueError, UnidentifiedImageError):
         return None
+
+
+@lru_cache(maxsize=4)
+def asset_data_uri(asset_key: str) -> str | None:
+    """Embed a verified local photo in page CSS without external requests."""
+    content = asset_download(asset_key)
+    if content is None:
+        return None
+    suffix = asset_path(asset_key).suffix.lower()
+    mime = "image/webp" if suffix == ".webp" else "image/jpeg"
+    return f"data:{mime};base64,{b64encode(content).decode('ascii')}"
 
 
 def render_image(asset_key: str, caption: str | None = None) -> bool:

@@ -1,8 +1,8 @@
 """Real Streamlit AppTest interactions; these are not browser layout tests.
 
-Credentials and shared storage are isolated per test. The callable account page
-is selected by its registered URL hash because AppTest.switch_page only accepts
-file-backed pages. No real secrets, deployment, or stable shared data are used.
+Credentials and shared storage are isolated per test. Portal and login pages
+are file-backed so AppTest can follow the same navigation as users. No real
+secrets, deployment, or stable shared data are used.
 """
 from __future__ import annotations
 
@@ -22,7 +22,6 @@ if str(ROOT) not in sys.path:
 
 import pandas as pd
 from streamlit.testing.v1 import AppTest
-from streamlit.util import calc_hash
 
 from core.exporter import zip_content
 from core.simulation import run_simulation
@@ -63,12 +62,23 @@ class AppUiTests(unittest.TestCase):
     @staticmethod
     def text(app):
         return "\n".join(str(element.value) for kind in
-                         ("title", "caption", "markdown", "info", "success", "warning", "error")
+                         ("title", "subheader", "caption", "markdown", "info", "success", "warning", "error")
                          for element in app.get(kind))
 
     @staticmethod
     def widget(widgets, label):
         return next(widget for widget in widgets if widget.label == label)
+
+    def visitor_app(self):
+        app = self.app()
+        self.no_exception(app)
+        self.assertIn("智慧接驳 · 畅游钟山", self.text(app))
+        self.assertEqual({button.label for button in app.button},
+                         {"进入游客端 →", "进入管理端 →"})
+        self.widget(app.button, "进入游客端 →").click().run()
+        self.no_exception(app)
+        self.assertEqual(app.title[0].value, "景行智调 · 游客出行助手")
+        return app
 
     def publish(self, results):
         with patch("shared_run_store.assert_admin"):
@@ -87,48 +97,64 @@ class AppUiTests(unittest.TestCase):
         return next(element.value for element in app.dataframe
                     if "全体观测候车均值（分钟）" in element.value.columns)
 
-    def test_default_visitor_query_and_replay_controls(self):
-        app = self.app()
-        self.no_exception(app)
-        self.assertEqual(app.title[0].value, "景行智调·游客出行助手")
-        self.assertEqual([tab.label for tab in app.tabs],
-                         ["线路查询", "仿真回放与候车", "趋势分析与策略比较"])
+    def test_portal_visitor_query_and_three_real_modules(self):
+        app = self.visitor_app()
+        self.assertEqual(len(app.tabs), 0)
+        self.assertTrue({"线路查询与推荐", "仿真回放与候车", "候车趋势与研究展示"}
+                        <= {button.label for button in app.button})
         self.assertEqual(app.radio(key="user_data_source").value, "内置演示样例")
         self.assertNotIn("_jingxing_admin_auth_tag", app.session_state)
-        self.assertEqual(len(app.image), 8)  # hero, map, four route cards, two optional reference photos
+        self.assertEqual(len(app.image), 7)  # map, four route cards, two optional reference photos
         self.assertIn("景区其他游览参考", [item.label for item in app.expander])
         self.assertIn("美龄宫、紫金山天文台不在本系统 A/B 研究站序内", self.text(app))
         self.assertIn("不代表景区真实实时运营数据", self.text(app))
-        self.widget(app.selectbox, "起点").select("N03 灵谷景区")
-        self.widget(app.selectbox, "终点").select("N03 灵谷景区").run()
-        self.assertIn("起点和终点相同", self.text(app))
-        self.widget(app.selectbox, "终点").select("N05 孙中山纪念馆").run()
+        self.widget(app.selectbox, "出发站点").select("N03 灵谷景区")
+        self.widget(app.selectbox, "目的站点").select("N03 灵谷景区").run()
+        self.widget(app.button, "查看推荐路线").click().run()
+        self.assertIn("出发站点和目的站点相同", self.text(app))
+        self.widget(app.selectbox, "出发站点").select("N01 地铁钟灵街站")
+        self.widget(app.selectbox, "目的站点").select("N06 紫金·钟爱里").run()
+        self.widget(app.button, "查看推荐路线").click().run()
+        self.assertIn("当前研究线路中没有支持该起终点的直达方案。", self.text(app))
+        self.widget(app.selectbox, "出发站点").select("N03 灵谷景区")
+        self.widget(app.selectbox, "目的站点").select("N05 孙中山纪念馆").run()
+        self.widget(app.button, "查看推荐路线").click().run()
         self.no_exception(app)
         query = next(frame.value for frame in app.dataframe if "记录情况" in frame.value.columns)
-        self.assertEqual(set(query["线路"]), {"A", "B"})
+        self.assertEqual(set(query["线路"]), {"A 线", "B 线"})
+        self.assertIn("不代表实时到站时间、实际车次或乘车保证", self.text(app))
+        self.widget(app.button, "仿真回放与候车").click().run()
+        self.assertIn("看看这一刻的接驳情况", self.text(app))
         self.widget(app.select_slider, "选择仿真回放时刻").set_value(0.0).run()
         self.widget(app.button, "查询后续上车记录").click().run()
         self.no_exception(app)
         self.assertTrue(any("同OD上车记录间隔(分钟)" in frame.value.columns for frame in app.dataframe))
+        self.widget(app.button, "候车趋势与研究展示").click().run()
+        self.assertIn("各站点排队是怎样变化的？", self.text(app))
         self.assertTrue(app.get("plotly_chart"))
 
     def test_uploaded_four_csv_zip_remains_single_run(self):
-        app = self.app()
+        app = self.visitor_app()
         app.radio(key="user_data_source").set_value("上传Admin导出的ZIP").run()
         app.file_uploader[0].upload("existing_four_csv.zip", zip_content(self.comparison_a[0]),
                                     "application/zip").run()
         self.no_exception(app)
         self.assertIn(self.comparison_a[0]["run_id"], self.text(app))
+        self.widget(app.select_slider, "选择仿真回放时刻").set_value(60.0).run()
+        self.widget(app.button, "查看推荐路线").click().run()
+        self.assertIn("当前仿真没有足够的同起终点完整记录", self.text(app))
+        self.widget(app.button, "候车趋势与研究展示").click().run()
         self.assertIn("演示样例与上传的单次仿真 ZIP 不提供已发布比较", self.text(app))
         self.assertFalse(any("全体观测候车均值（分钟）" in frame.value.columns for frame in app.dataframe))
-        self.assertEqual(len(app.tabs), 3)
+        self.assertTrue(app.get("plotly_chart"))
 
     def test_independent_visitor_refresh_replaces_entire_comparison(self):
         first = self.publish(self.comparison_a)
-        app = self.app()
+        app = self.visitor_app()
         self.no_exception(app)
         self.assertNotIn("last_result", app.session_state)
         self.assertEqual(app.radio(key="user_data_source").value, "最新共享仿真")
+        self.widget(app.button, "候车趋势与研究展示").click().run()
         self.assertIn(first.comparison["comparison_id"], self.text(app))
         self.assertIn("北京时间", self.text(app))
         self.assertIn("A+B 两线基准到达率 60 人/小时", self.text(app))
@@ -183,16 +209,33 @@ class AppUiTests(unittest.TestCase):
                 app.switch_page("views/" + page).run()
                 self.no_exception(app)
                 self.assertNotIn("此页面仅管理员可访问", self.text(app))
-        # The account page is a callable, registered at /admin-login.
-        app._page_hash = calc_hash("admin-login")
-        app.run()
+        app.switch_page("views/admin_login.py").run()
         self.widget(app.button, "退出管理员登录").click().run()
         self.no_exception(app)
         self.assertNotIn("_jingxing_admin_auth_tag", app.session_state)
-        self.assertEqual(app.title[0].value, "景行智调·游客出行助手")
+        self.assertIn("智慧接驳 · 畅游钟山", self.text(app))
         app.switch_page("views/4_Admin_Smart_Dispatch.py").run()
         self.assertIn("此页面仅管理员可访问", self.text(app))
         self.assertFalse(any(button.label == "📊 同场景比较三策略" for button in app.button))
+
+    def test_portal_manager_login_opens_six_module_workbench(self):
+        app = self.app()
+        self.widget(app.button, "进入管理端 →").click().run()
+        self.no_exception(app)
+        self.assertIn("管理员登录", self.text(app))
+        self.widget(app.text_input, "管理员账号").set_value("isolated-ui-admin")
+        self.widget(app.text_input, "登录密码").set_value("wrong-test-password")
+        self.widget(app.button, "登录管理工作台 →").click().run()
+        self.assertIn("账号或密码不正确，请重新输入。", self.text(app))
+        self.assertNotIn("_jingxing_admin_auth_tag", app.session_state)
+        self.widget(app.text_input, "管理员账号").set_value("isolated-ui-admin")
+        self.widget(app.text_input, "登录密码").set_value("temporary-test-only")
+        self.widget(app.button, "登录管理工作台 →").click().run()
+        self.no_exception(app)
+        self.assertIn("_jingxing_admin_auth_tag", app.session_state)
+        self.assertIn("景行智调 · 智能调度管理中心", self.text(app))
+        for module in ("调度控制台", "车辆与线路", "客流场景", "智能调度", "仿真监测", "实验分析"):
+            self.assertIn(module, self.text(app))
 
     def test_scenario_editor_to_admin_comparison_to_independent_visitor(self):
         admin = self.app()
@@ -223,10 +266,11 @@ class AppUiTests(unittest.TestCase):
             self.assertEqual(result["seed"], 77)
         shared = load_shared_bundle(self.stations, self.shared_path)
         self.assertIsNone(shared.comparison_error)
-        visitor = self.app()
+        visitor = self.visitor_app()
         self.no_exception(visitor)
         self.assertNotIn("_jingxing_admin_auth_tag", visitor.session_state)
         self.assertNotIn("last_result", visitor.session_state)
+        self.widget(visitor.button, "候车趋势与研究展示").click().run()
         self.assertIn(shared.comparison["comparison_id"], self.text(visitor))
         self.assertEqual(set(self.comparison_table(visitor)["运行编号"]),
                          {item["run_id"] for item in admin.session_state["comparison"]})
@@ -237,14 +281,16 @@ class AppUiTests(unittest.TestCase):
             archive.writestr("comparison.json", b"{invalid")
         self.shared_path.write_bytes(buffer.getvalue())
         with patch("utils.media.asset_download", return_value=None):
-            app = self.app()
+            app = self.visitor_app()
             self.no_exception(app)
             self.assertIn("已发布比较结果校验未通过", self.text(app))
             self.assertIn("暂不可用，线路查询和仿真功能仍可使用", self.text(app))
             self.assertEqual(len(app.image), 0)
-            self.assertEqual(len(app.tabs), 3)
             self.assertIn(self.comparison_a[0]["run_id"], self.text(app))
+            self.widget(app.button, "查看推荐路线").click().run()
             self.assertTrue(any("记录情况" in frame.value.columns for frame in app.dataframe))
+            self.widget(app.button, "候车趋势与研究展示").click().run()
+            self.assertTrue(app.get("plotly_chart"))
 
 
 if __name__ == "__main__":

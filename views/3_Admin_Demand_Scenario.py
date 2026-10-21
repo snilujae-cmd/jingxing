@@ -5,9 +5,11 @@ from admin_auth import require_admin_page
 from core.demand import demand_multiplier, outbound_fraction
 from scenario_state import (default_scenario, load_scenario, save_scenario,
                             simulation_scenario_params)
-from utils.style import apply_plotly_theme, page_header, section_header
+from utils.style import admin_navigation, apply_plotly_theme, page_header, page_surface, section_header
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("客流场景")
 
 page_header("客流场景", "设置同一组研究参数，用于单次仿真与三策略公平比较。参数自动保存到当前会话。", "ADMIN · SCENARIO")
 st.info("基准到达率指 A+B 两线合计每小时待乘车游客数（非每站、非景区总游客数）；所有客流均为仿真假设。")

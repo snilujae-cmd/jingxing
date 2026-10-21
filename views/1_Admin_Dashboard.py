@@ -3,9 +3,11 @@ import plotly.graph_objects as go
 from admin_auth import require_admin_page
 from data.routes import ROUTES
 from data.vehicles import DEFAULT_FLEET
-from utils.style import apply_plotly_theme, page_header, section_header
+from utils.style import admin_navigation, apply_plotly_theme, page_header, page_surface, section_header
 
 require_admin_page()
+page_surface("admin")
+admin_navigation("调度控制台")
 
 page_header("调度控制台", "集中查看模型配置与本会话最近一次仿真，辅助研究场景中的调度决策。", "ADMIN · OVERVIEW")
 section_header("模型配置", "以下为当前会话配置及访谈参考值，均非实时运营监控指标。")

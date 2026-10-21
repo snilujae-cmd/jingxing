@@ -180,11 +180,12 @@ class PageBoundaryTests(unittest.TestCase):
 
     def test_guest_navigation_registers_hidden_admin_views(self):
         pages = self._navigation_for(False)
-        self.assertEqual([page[0] for page in pages["User 游客端"]], ["views/user.py"])
-        self.assertTrue(pages["User 游客端"][0][1]["default"])
+        self.assertEqual([page[0] for page in pages["平台"]],
+                         ["views/portal.py", "views/user.py", "views/admin_login.py"])
+        self.assertTrue(pages["平台"][0][1]["default"])
+        self.assertFalse(any(page[1].get("default", False) for page in pages["平台"][1:]))
         self.assertEqual(len(pages["Admin 管理端"]), 7)
         self.assertTrue(all(page[1]["visibility"] == "hidden" for page in pages["Admin 管理端"]))
-        self.assertIn("管理员账号", pages)
 
     def test_authenticated_navigation_registers_all_admin_views(self):
         pages = self._navigation_for(True)
@@ -194,7 +195,7 @@ class PageBoundaryTests(unittest.TestCase):
             {f"views/{path.name}" for path in ADMIN_VIEWS},
         )
         self.assertTrue(all(page[1]["visibility"] == "visible" for page in pages["Admin 管理端"]))
-        self.assertTrue(pages["User 游客端"][0][1]["default"])
+        self.assertTrue(pages["平台"][0][1]["default"])
 
     def test_every_admin_view_calls_guard_before_rendering_or_running(self):
         class PageDenied(Exception):
