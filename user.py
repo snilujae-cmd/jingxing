@@ -29,8 +29,7 @@ stations, stop_order = load_base_data()
 station_names = stations.set_index("station_id")["station_name"].to_dict()
 station_options = [f"{r.station_id} {r.station_name}" for r in stations.itertuples()]
 station_map = {f"{r.station_id} {r.station_name}": r.station_id for r in stations.itertuples()}
-IMAGE_SOURCE_NOTE = ("据项目方说明，图片来自南京钟山风景区官方发布渠道；"
-                     "相关图片使用已与景区沟通并获得支持。")
+IMAGE_SOURCE_NOTE = ("图片来源：钟山风景区")
 
 
 hero_text, hero_photo = st.columns([1.05, 1.35], gap="large", vertical_alignment="center")
