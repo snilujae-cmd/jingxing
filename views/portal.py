@@ -40,5 +40,5 @@ with manager:
 
 st.markdown("""
 <div class="jx-portal-note">本系统为科研情景仿真与出行辅助演示，不提供景区实时车辆定位或官方调度信息。<br>
-背景：流徽榭 · 原图水印署名「钟山风景名胜区」；素材由用户提供。</div>
+背景：流徽榭 · 图片来源：钟山风景名胜区</div>
 """, unsafe_allow_html=True)
